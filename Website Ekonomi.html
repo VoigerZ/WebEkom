@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pegadaian Indonesia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-heading {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-body {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .gradient-gold {
+      background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .tab-btn.active {
+      background-color: #d4af37;
+      color: #1a472a;
+      font-weight: 600;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      background: #d4af37;
+      border-radius: 50%;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 24px;
+      width: 2px;
+      height: calc(100% - 8px);
+      background: #e5e7eb;
+    }
+    .timeline-item:last-child::after {
+      display: none;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #d4af37, #f4d03f);
+      border-radius: 2px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="font-body h-full overflow-auto" style="background-color: #f8f6f1; color: #2c3e50;"><!-- Navigation -->
+  <nav class="sticky top-0 z-50 shadow-md" style="background-color: #1a472a;">
+   <div class="max-w-6xl mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+     <div class="flex items-center gap-3"></div>
+      <span id="site-title" class="font-heading text-xl font-bold" style="color: #d4af37; margin-right: 250px;">Lembaga keuangan non-bank: Pegadaian</span>
+      <div class="hidden md:flex items-center gap-4"><button class="tab-btn nav-link text-white hover:text-yellow-300 transition-colors px-4 py-2 rounded-lg" data-tab="pengertian">Pengertian</button> <button class="tab-btn nav-link text-white hover:text-yellow-300 transition-colors px-4 py-2 rounded-lg" data-tab="sejarah">Sejarah</button> <button class="tab-btn nav-link text-white hover:text-yellow-300 transition-colors px-4 py-2 rounded-lg" data-tab="jenis">Jenis</button> <button class="tab-btn nav-link text-white hover:text-yellow-300 transition-colors px-4 py-2 rounded-lg" data-tab="syarat">Syarat Gadai</button><button
+      </div><button id="mobile-menu-btn" class="md:hidden text-white">
+      </button>
+
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-green-700 pt-4">
+     <div class="flex flex-col gap-3"><button class="tab-btn text-white hover:text-yellow-300 transition-colors text-left" data-tab="pengertian">Pengertian</button> <button class="tab-btn text-white hover:text-yellow-300 transition-colors text-left" data-tab="sejarah">Sejarah</button> <button class="tab-btn text-white hover:text-yellow-300 transition-colors text-left" data-tab="jenis">Jenis</button> <button class="tab-btn text-white hover:text-yellow-300 transition-colors text-left" data-tab="syarat">Syarat Gadai</button>
+     </div>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <header class="gradient-gold text-white py-20 px-4">
+   <div class="max-w-6xl mx-auto text-center">
+    <div class="animate-fade-in">
+     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background-color: rgba(212, 175, 55, 0.2); border: 1px solid #d4af37;"><span class="text-yellow-300 text-sm font-semibold">🏛️ Lembaga Keuangan Non-Bank</span>
+     </div>
+     <h1 class="font-heading text-4xl md:text-6xl font-bold mb-4">Pegadaian</h1>
+     <div class="flex flex-wrap justify-center gap-4 mt-8">
+      <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: rgba(255,255,255,0.1);"><span class="text-2xl">📍</span> <span>4.000+ Outlet</span>
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: rgba(255,255,255,0.1);"><span class="text-2xl">👥</span> <span>Jutaan Nasabah</span>
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: rgba(255,255,255,0.1);"><span class="text-2xl">📅</span> <span>Sejak 1901</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header><!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-12"><!-- Pengertian Section -->
+   <section id="pengertian" class="tab-content mb-16">
+    <div class="text-center mb-10">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #1a472a;">Pengertian Pegadaian</h2>
+     <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+     <div class="card-hover rounded-2xl p-8 shadow-lg" style="background-color: #ffffff;">
+      <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background-color: #e8f5e9;">
+       <svg class="w-8 h-8" fill="#1a472a" viewbox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+       </svg>
+      </div>
+      <h3 class="font-heading text-xl font-bold mb-4" style="color: #1a472a;">Definisi Pegadaian</h3>
+      <p class="leading-relaxed" style="color: #4a5568;">Pengertian Gadai menurut Susilo (1999) adalah Suatu hak yang diperoleh oleh seseorang yang mempunyai piutang atas suatu barang bergerak. Barang bergerak tersebut diserahkan kepada orang yang berpiutang oleh seorang yang mempunyai hutang atau oleh orang lain atas nama orang yang mempunyai hutang. Seorang yang berutang tersebut memberikan kekuasaan kepada orang yang berpiutang untuk menggunakan barang bergerak yang telah diserahkan untuk melunasi hutang apabila pihak yang berhutang tidak dapat melunasi kewajibannya pada saat jatuh tempo. Pegadaian merupakan sebuah BUMN di Indonesia yang usaha intinya adalah bidang jasa penyaluran kredit kepada masyarakat atas dasar hukum gadai.</p>
+     </div>
+     <div class="card-hover rounded-2xl p-8 shadow-lg" style="background-color: #ffffff;">
+      <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background-color: #fff8e1;">
+       <svg class="w-8 h-8" fill="#d4af37" viewbox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+       </svg>
+      </div>
+      <h3 class="font-heading text-xl font-bold mb-4" style="color: #1a472a;">Definisi LNKB (Lembaga keuangan non-bank)</h3>
+      <p class="leading-relaxed" style="color: #4a5568;">Lembaga Non-Bank (LKBB) adalah badan usaha di bidang keuangan yang bukan bank, tidak menghimpun dana simpanan seperti tabungan/giro, tapi tetap menyediakan layanan jasa keuangan seperti pembiayaan, asuransi, pegadaian, reksa dana, dan fintech untuk mendukung perekonomian dan menjangkau masyarakat yang kurang tersentuh layanan perbankan. Tujuannya adalah membiayai investasi, memfasilitasi pasar modal, dan menawarkan alternatif produk keuangan, seperti pinjaman, investasi, dan perlindungan risiko..</p>
+     </div>
+    </div><!-- Fungsi Pegadaian -->
+    <div class="mt-8 rounded-2xl p-8 shadow-lg" style="background-color: #1a472a;">
+     <h3 class="font-heading text-xl font-bold mb-6 text-white text-center">Fungsi Pokok Pegadaian</h3>
+      <p class="leading-relaxed" style="color: #ffffff;">1. Mengelolah penyaluran uang pinjaman atas dasar hukum gadai dengan cara mudah, cepat, aman, dan hemat.</p>
+      <p class="leading-relaxed" style="color: #ffffff;">2. Menciptakan dan mengembangkan usah-usaha lain yang menguntungkan bagi pegadaian maupunn masyarakat.</p>
+      <p class="leading-relaxed" style="color: #ffffff;">3. Mengelola keuangan, perlengkapan, kepegawaian. Pendidikan dan pelatihan.</p>
+      <p class="leading-relaxed" style="color: #ffffff;">4. Mengelola organisasi, tata kerja dan tata laksana pegadaian.</p>
+      <p class="leading-relaxed" style="color: #ffffff;">5. Melakukan penelitian dan pengembangan serta mengawasi pengelolaan pegadaian.</p>
+
+     <div class="text-center p-4">
+       
+     </div>
+    </div>
+   </section><!-- Sejarah Section -->
+   <section id="sejarah" class="tab-content mb-16 hidden">
+    <div class="text-center mb-10">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #1a472a;">Sejarah Pegadaian</h2>
+     <div class="section-divider mx-auto"></div>
+    </div>
+    <div style="margin-bottom: 50px; background-color: #ffffff;" class="card-hover rounded-2xl p-8 shadow-lg">
+      <h3 class="font-heading text-xl font-bold mb-4" style="color: #1a472a;">Sejarah singkat</h3>
+      <p class="leading-relaxed" style="color: #4a5568;">Pegadaian atau Pawn Shop merupakan lembaga perkreditan dengan sistem gadai. Lembaga semacam ini pada awalnya berkembang di Italia yang kemudian dipraktikkan di wilayah-wilayah Eropa lainnya, misalnya Inggris dan Belanda. Sistem gadai tersebut memasuki Indonesia dibawa dan dikembangkan oleh orang Belanda (VOC), yaitu sekitar abad ke-18. Bentuk usaha pagadaian di Indonesia berawal dari Bank Van Lening pada masa VOC yang mempunyai tugas memberikan pinjaman uang kepada masyarakat dengan jaminan gadai. Sejak itu bentuk usaha pegadaian telah mengalami beberapa kali perubahan sejalan dengan perubahan peraturan-peraturan.</p>
+    </div>
+    <div class="rounded-2xl p-8 shadow-lg" style="background-color: #ffffff;">
+     <div class="space-y-8"><!-- Timeline Items -->
+      <div class="timeline-item pb-8">
+       <div class="flex flex-wrap items-start gap-4"><span class="inline-block px-3 py-1 rounded-full text-sm font-bold" style="background-color: #d4af37; color: #1a472a;">1746</span>
+        <div>
+         <h4 class="font-bold text-lg" style="color: #1a472a;">Masa VOC</h4>
+         <p style="color: #4a5568;">Bank Van Leening didirikan oleh VOC sebagai lembaga kredit pertama yang memberikan pinjaman dengan jaminan barang bergerak di Batavia.</p>
+        </div>
+       </div>
+      </div>
+      <div class="timeline-item pb-8">
+       <div class="flex flex-wrap items-start gap-4"><span class="inline-block px-3 py-1 rounded-full text-sm font-bold" style="background-color: #d4af37; color: #1a472a;">1901</span>
+        <div>
+         <h4 class="font-bold text-lg" style="color: #1a472a;">Pendirian Resmi</h4>
+         <p style="color: #4a5568;">Pegadaian pertama didirikan di Sukabumi pada <strong>1 April 1901</strong> oleh Pemerintah Hindia Belanda. Tanggal ini diperingati sebagai hari lahir Pegadaian.</p>
+        </div>
+       </div>
+      </div>
+      <div class="timeline-item pb-8">
+       <div class="flex flex-wrap items-start gap-4"><span class="inline-block px-3 py-1 rounded-full text-sm font-bold" style="background-color: #d4af37; color: #1a472a;">1930</span>
+        <div>
+         <h4 class="font-bold text-lg" style="color: #1a472a;">Jawatan Pegadaian</h4>
+         <p style="color: #4a5568;">Status Pegadaian berubah menjadi Jawatan Pegadaian yang merupakan bagian dari Departemen Keuangan.</p>
+        </div>
+       </div>
+      </div>
+      <div class="timeline-item pb-8">
+       <div class="flex flex-wrap items-start gap-4"><span class="inline-block px-3 py-1 rounded-full text-sm font-bold" style="background-color: #d4af37; color: #1a472a;">1961</span>
+        <div>
+         <h4 class="font-bold text-lg" style="color: #1a472a;">Perusahaan Negara</h4>
+         <p style="color: #4a5568;">Berdasarkan PP No. 178/1961, Pegadaian berubah menjadi Perusahaan Negara (PN) Pegadaian.</p>
+        </div>
+       </div>
+      </div>
+      <div class="timeline-item pb-8">
+       <div class="flex flex-wrap items-start gap-4"><span class="inline-block px-3 py-1 rounded-full text-sm font-bold" style="background-color: #d4af37; color: #1a472a;">1990</span>
+        <div>
+         <h4 class="font-bold text-lg" style="color: #1a472a;">Perusahaan Umum (Perum)</h4>
+         <p style="color: #4a5568;">Berdasarkan PP No. 10/1990, status diubah menjadi Perum Pegadaian untuk meningkatkan efisiensi dan profesionalisme.</p>
+        </div>
+       </div>
+      </div>
+      <div class="timeline-item">
+       <div class="flex flex-wrap items-start gap-4"><span class="inline-block px-3 py-1 rounded-full text-sm font-bold" style="background-color: #d4af37; color: #1a472a;">2012</span>
+        <div>
+         <h4 class="font-bold text-lg" style="color: #1a472a;">PT Pegadaian (Persero)</h4>
+         <p style="color: #4a5568;">Berdasarkan PP No. 51/2011, Perum Pegadaian bertransformasi menjadi <strong>PT Pegadaian (Persero)</strong>, memungkinkan ekspansi bisnis dan modernisasi layanan.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Jenis Section -->
+   <section id="jenis" class="tab-content mb-16 hidden">
+    <div class="text-center mb-10">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #1a472a;">Jenis Jenis Pegadaian</h2>
+     <div class="section-divider mx-auto"></div>
+    </div>
+    <div style="margin-bottom: 50px; background-color: #ffffff;" class="card-hover rounded-2xl p-8 shadow-lg">
+      <h3 class="font-heading text-xl font-bold mb-4" style="color: #1a472a; text-align: center;">Gadai terbagi ke dalam 2 jenis, yaitu gadai konvensional dan gadai syariah.</h3>
+    <div class="grid md:grid-cols-2 gap-8"><!-- Dasar Hukum -->
+     <div style="margin-bottom: 50px; background-color: #ffffff;" class="card-hover rounded-2xl p-8 shadow-lg">
+      <h3 class="font-heading text-xl font-bold mb-4" style="color: #1a472a;">1. Konvensional</h3>
+      <p class="leading-relaxed" style="color: #4a5568;">Gadai konvensional merupakan salah satu jenis gadai yang lazim ditemui di masyarakat serta memiliki aturan yang jelas, sesuai dengan ketetapan Otoritas Jasa Keuangan (OJK).
+      <p class="leading-relaxed" style="color: #4a5568;">Cara kerjanya yaitu calon peminjam atau debitur menyerahkan jaminan berupa barang kepada kreditur dengan nilai barang yang sudah ditaksir untuk selanjutnya dilakukan pengecekan sebelum adanya pencairan uang pinjaman.
+      <p class="leading-relaxed" style="color: #4a5568;">Setelah pengecekan sudah selesai, Langkah terakhir yaitu dibuatnya kesepakatan mengenai tanggal pelunasan uang pinjaman serta bunga yang harus dibayarkan.</p>
+    </div>
+     <div style="margin-bottom: 50px; background-color: #ffffff;" class="card-hover rounded-2xl p-8 shadow-lg">
+      <h3 class="font-heading text-xl font-bold mb-4" style="color: #1a472a;">2. Syariah</h3>
+      <p class="leading-relaxed" style="color: #4a5568;">Gadai jenis syariah sebetulnya hampir mirip seperti jenis konvensional, Perbedaannya ialah system gadai yang digunakan sesuai dengan syariat Islam.</p>
+    </div>
+   </section><!-- Syarat Gadai Section -->
+   <section id="syarat" class="tab-content mb-16 hidden">
+    <div class="text-center mb-10">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #1a472a;">Syarat &amp; Prosedur Gadai</h2>
+     <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8"><!-- Syarat Umum -->
+     <div class="card-hover rounded-2xl p-8 shadow-lg" style="background-color: #ffffff;">
+      <div class="flex items-center gap-4 mb-6">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: #e8f5e9;"><span class="text-2xl">📝</span>
+       </div>
+       <h3 class="font-heading text-xl font-bold" style="color: #1a472a;">Syarat Umum</h3>
+      </div>
+      <div class="space-y-4">
+       <div class="flex items-center gap-3 p-3 rounded-lg" style="background-color: #f8f6f1;"><span class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #1a472a;">1</span> <span style="color: #4a5568;">Warga Negara Indonesia (WNI)</span>
+       </div>
+       <div class="flex items-center gap-3 p-3 rounded-lg" style="background-color: #f8f6f1;"><span class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #1a472a;">2</span> <span style="color: #4a5568;">Berusia minimal 17 tahun / sudah menikah</span>
+       </div>
+       <div class="flex items-center gap-3 p-3 rounded-lg" style="background-color: #f8f6f1;"><span class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #1a472a;">3</span> <span style="color: #4a5568;">Memiliki KTP / identitas yang masih berlaku</span>
+       </div>
+       <div class="flex items-center gap-3 p-3 rounded-lg" style="background-color: #f8f6f1;"><span class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #1a472a;">4</span> <span style="color: #4a5568;">Membawa barang jaminan yang sah</span>
+       </div>
+      </div>
+     </div><!-- Barang Jaminan -->
+     <div class="card-hover rounded-2xl p-8 shadow-lg" style="background-color: #ffffff;">
+      <div class="flex items-center gap-4 mb-6">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: #fff8e1;"><span class="text-2xl">🎁</span>
+       </div>
+       <h3 class="font-heading text-xl font-bold" style="color: #1a472a;">Barang yang Dapat Digadaikan</h3>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+       <div class="flex items-center gap-2 p-2 rounded-lg" style="background-color: #f8f6f1;"><span style="color: #d4af37;">✓</span> <span class="text-sm" style="color: #4a5568;">Emas &amp; Perhiasan</span>
+       </div>
+       <div class="flex items-center gap-2 p-2 rounded-lg" style="background-color: #f8f6f1;"><span style="color: #d4af37;">✓</span> <span class="text-sm" style="color: #4a5568;">Smartphone &amp; Laptop</span>
+       </div>
+       <div class="flex items-center gap-2 p-2 rounded-lg" style="background-color: #f8f6f1;"><span style="color: #d4af37;">✓</span> <span class="text-sm" style="color: #4a5568;">Kendaraan Bermotor</span>
+       </div>
+       <div class="flex items-center gap-2 p-2 rounded-lg" style="background-color: #f8f6f1;"><span style="color: #d4af37;">✓</span> <span class="text-sm" style="color: #4a5568;">Kamera &amp; Elektronik</span>
+       </div>
+       <div class="flex items-center gap-2 p-2 rounded-lg" style="background-color: #f8f6f1;"><span style="color: #d4af37;">✓</span> <span class="text-sm" style="color: #4a5568;">Jam Tangan</span>
+       </div>
+       <div class="flex items-center gap-2 p-2 rounded-lg" style="background-color: #f8f6f1;"><span style="color: #d4af37;">✓</span> <span class="text-sm" style="color: #4a5568;">Barang Antik</span>
+       </div>
+      </div>
+      <div class="mt-4 p-3 rounded-lg border-l-4" style="background-color: #fef3c7; border-color: #d4af37;">
+       <p class="text-sm" style="color: #92400e;">⚠️ Barang harus milik sendiri, tidak dalam sengketa, dan memiliki bukti kepemilikan yang sah.</p>
+      </div>
+     </div>
+    </div><!-- Prosedur Gadai -->
+    <div class="mt-8 rounded-2xl p-8 shadow-lg" style="background-color: #1a472a;">
+     <h3 class="font-heading text-xl font-bold mb-8 text-white text-center">Prosedur Menggadaikan Barang</h3>
+     <div class="grid md:grid-cols-5 gap-4">
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3" style="background-color: #d4af37;"><span class="text-2xl">🏢</span>
+       </div>
+       <div class="text-sm text-white font-semibold mb-1">
+        Langkah 1
+       </div>
+       <p class="text-xs text-gray-300">Kunjungi outlet Pegadaian terdekat</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3" style="background-color: #d4af37;"><span class="text-2xl">🪪</span>
+       </div>
+       <div class="text-sm text-white font-semibold mb-1">
+        Langkah 2
+       </div>
+       <p class="text-xs text-gray-300">Serahkan KTP dan barang jaminan</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3" style="background-color: #d4af37;"><span class="text-2xl">🔍</span>
+       </div>
+       <div class="text-sm text-white font-semibold mb-1">
+        Langkah 3
+       </div>
+       <p class="text-xs text-gray-300">Petugas melakukan taksiran barang</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3" style="background-color: #d4af37;"><span class="text-2xl">✍️</span>
+       </div>
+       <div class="text-sm text-white font-semibold mb-1">
+        Langkah 4
+       </div>
+       <p class="text-xs text-gray-300">Setujui nilai pinjaman &amp; tanda tangan</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3" style="background-color: #d4af37;"><span class="text-2xl">💵</span>
+       </div>
+       <div class="text-sm text-white font-semibold mb-1">
+        Langkah 5
+       </div>
+       <p class="text-xs text-gray-300">Terima uang pinjaman &amp; Surat Bukti Kredit</p>
+      </div>
+     </div>
+    </div><!-- Info Tambahan -->
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+     <div class="card-hover rounded-xl p-6 shadow-lg text-center" style="background-color: #ffffff;">
+      <div class="text-4xl mb-3">
+       ⏱️
+      </div>
+      <h4 class="font-bold mb-2" style="color: #1a472a;">Proses Cepat</h4>
+      <p class="text-sm" style="color: #4a5568;">Pencairan dana hanya 15 menit</p>
+     </div>
+     <div class="card-hover rounded-xl p-6 shadow-lg text-center" style="background-color: #ffffff;">
+      <div class="text-4xl mb-3">
+       🔒
+      </div>
+      <h4 class="font-bold mb-2" style="color: #1a472a;">Aman &amp; Terjamin</h4>
+      <p class="text-sm" style="color: #4a5568;">Barang diasuransikan selama masa gadai</p>
+     </div>
+     <div class="card-hover rounded-xl p-6 shadow-lg text-center" style="background-color: #ffffff;">
+      <div class="text-4xl mb-3">
+       🔄
+      </div>
+      <h4 class="font-bold mb-2" style="color: #1a472a;">Fleksibel</h4>
+      <p class="text-sm" style="color: #4a5568;">Dapat diperpanjang atau ditebus kapan saja</p>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer style="background-color: #1a472a;">
+   <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="text-center">
+     <div class="flex items-center justify-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: #d4af37;">
+       <svg class="w-5 h-5" fill="#1a472a" viewbox="0 0 24 24"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.18l6 3.75v7.14l-6 3.75-6-3.75V7.93l6-3.75z" /> <circle cx="12" cy="12" r="3" />
+       </svg>
+      </div><span class="font-heading text-lg font-bold" style="color: #d4af37;">Pegadaian Indonesia</span>
+     </div>
+    </div>
+   </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_title: 'Pegadaian Indonesia',
+      hero_subtitle: 'Solusi Pembiayaan Terpercaya untuk Masyarakat Indonesia',
+      footer_text: '© 2024 Informasi Pegadaian Indonesia | Website Edukasi',
+      primary_color: '#1a472a',
+      secondary_color: '#d4af37',
+      background_color: '#f8f6f1',
+      text_color: '#2c3e50',
+      card_color: '#ffffff',
+      font_family: 'Source Sans Pro',
+      font_size: 16
+    };
+
+    // Tab Navigation System
+    let currentTab = 'pengertian';
+
+    function switchTab(tabName) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Remove active class from all tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show selected tab content
+      const targetSection = document.getElementById(tabName);
+      if (targetSection) {
+        targetSection.classList.remove('hidden');
+      }
+
+      // Add active class to clicked tab buttons
+      document.querySelectorAll(`.tab-btn[data-tab="${tabName}"]`).forEach(btn => {
+        btn.classList.add('active');
+      });
+
+      currentTab = tabName;
+
+      // Close mobile menu after selection
+      document.getElementById('mobile-menu').classList.add('hidden');
+    }
+
+    // Initialize first tab as active
+    document.addEventListener('DOMContentLoaded', () => {
+      switchTab('pengertian');
+    });
+
+    // Tab button click handlers
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const tabName = this.getAttribute('data-tab');
+        switchTab(tabName);
+      });
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Element SDK initialization
+    async function onConfigChange(config) {
+      const siteTitle = document.getElementById('site-title');
+      const heroSubtitle = document.getElementById('hero-subtitle');
+      const footerText = document.getElementById('footer-text');
+
+      if (siteTitle) {
+        siteTitle.textContent = config.site_title || defaultConfig.site_title;
+        siteTitle.style.fontFamily = `${config.font_family || defaultConfig.font_family}, serif`;
+      }
+      if (heroSubtitle) {
+        heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+        heroSubtitle.style.fontFamily = `${config.font_family || defaultConfig.font_family}, sans-serif`;
+      }
+      if (footerText) {
+        footerText.textContent = config.footer_text || defaultConfig.footer_text;
+      }
+
+      // Apply font family to all heading elements
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.querySelectorAll('.font-heading').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, serif`;
+      });
+      document.querySelectorAll('.font-body').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, sans-serif`;
+      });
+
+      // Apply font size scaling
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.card_color || defaultConfig.card_color,
+            set: (value) => {
+              config.card_color = value;
+              window.elementSdk.setConfig({ card_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              config.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              config.secondary_color = value;
+              window.elementSdk.setConfig({ secondary_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['site_title', config.site_title || defaultConfig.site_title],
+        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+        ['footer_text', config.footer_text || defaultConfig.footer_text]
+      ]);
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9baadcddc4c9d8da',t:'MTc2Nzg2NjU4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
